@@ -4,7 +4,10 @@ import UIKit
 
 class MainViewController: UIViewController {
     
+    //MARK: - Constants
+    
     private let mainStackView = MainStackView()
+    private let calculationModel = CalculationModel()
     
     private let resultLabel: UILabel = {
         let label = UILabel()
@@ -17,6 +20,8 @@ class MainViewController: UIViewController {
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
+    
+    //MARK: - Lifecycles
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,13 +40,38 @@ class MainViewController: UIViewController {
     }
 }
 
+//MARK: - Extensions
+
 extension MainViewController: MainStackViewProtocol {
     func tapNumberButton(tag: Int) {
-        print(tag)
+        calculationModel.setNumber(number: tag)
+        resultLabel.text = calculationModel.getCurrentNumber()
     }
     
     func tapActionButton(tag: Int) {
-        print(tag)
+        switch tag {
+        case 10: // .
+            print(10)
+        case 11: // =
+            resultLabel.text = calculationModel.getResult()
+        case 12: // +
+            calculationModel.setOperation(operation: .addition)
+        case 13: // -
+            calculationModel.setOperation(operation: .substraction)
+        case 14: // x
+            calculationModel.setOperation(operation: .multiplication)
+        case 15: // /
+            calculationModel.setOperation(operation: .division)
+        case 16: // %
+            print(16)
+        case 17: // +/-
+            print(17)
+        case 18: // AC
+            calculationModel.resetValues()
+            resultLabel.text = "0"
+        default:
+            print("error tag")
+        }
     }
     
     

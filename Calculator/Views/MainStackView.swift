@@ -50,11 +50,11 @@ class MainStackView: UIStackView {
     
     @objc private func setupMainStackView() {
         let button0 = createButton(title: "0", tag: 0, color: .gray)
-        let buttonComma = createButton(title: ",", tag: 10, color: .gray)
+        let buttonPoint = createButton(title: ",", tag: 10, color: .gray)
         let buttonEqual = createButton(title: "=", tag: 11, color: .orange)
-        let firstStackView = UIStackView(subviews: [button0, buttonComma, buttonEqual])
+        let firstStackView = UIStackView(subviews: [button0, buttonPoint, buttonEqual])
         button0.widthAnchor.constraint(equalTo: firstStackView.widthAnchor, multiplier: 0.5).isActive = true
-        buttonComma.widthAnchor.constraint(equalTo: buttonEqual.widthAnchor, multiplier: 1).isActive = true
+        buttonPoint.widthAnchor.constraint(equalTo: buttonEqual.widthAnchor, multiplier: 1).isActive = true
         firstStackView.distribution = .fill
         
         

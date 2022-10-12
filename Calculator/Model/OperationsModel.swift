@@ -8,5 +8,4 @@ enum Operations {
     case multiplication
     case division
     case substraction
-    
 }
