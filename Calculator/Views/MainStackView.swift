@@ -27,7 +27,7 @@ class MainStackView: UIStackView {
     
     private func configure() {
         axis = .vertical
-        spacing = 1
+        spacing = 10
         distribution = .fillEqually
         translatesAutoresizingMaskIntoConstraints = false
     }
@@ -39,7 +39,7 @@ class MainStackView: UIStackView {
         button.backgroundColor = color
         button.tintColor = .white
         button.titleLabel?.font = .boldSystemFont(ofSize: 22 )
-        button.layer.cornerRadius = 10
+        button.layer.cornerRadius = 25
         button.addTarget(self, action: #selector(keyboardButtonTapped), for: .touchUpInside)
         return button
     }
@@ -56,7 +56,6 @@ class MainStackView: UIStackView {
         button0.widthAnchor.constraint(equalTo: firstStackView.widthAnchor, multiplier: 0.5).isActive = true
         buttonPoint.widthAnchor.constraint(equalTo: buttonEqual.widthAnchor, multiplier: 1).isActive = true
         firstStackView.distribution = .fill
-        
         
         let button1 = createButton(title: "1", tag: 1, color: .gray)
         let button2 = createButton(title: "2", tag: 2, color: .gray)

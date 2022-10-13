@@ -51,21 +51,24 @@ extension MainViewController: MainStackViewProtocol {
     func tapActionButton(tag: Int) {
         switch tag {
         case 10: // .
-            print(10)
+            calculationModel.addPoint()
+            resultLabel.text = calculationModel.getCurrentNumber()
         case 11: // =
             resultLabel.text = calculationModel.getResult()
         case 12: // +
-            calculationModel.setOperation(operation: .addition)
+            resultLabel.text = calculationModel.setOperation(operation: .addition)
         case 13: // -
-            calculationModel.setOperation(operation: .substraction)
+            resultLabel.text = calculationModel.setOperation(operation: .substraction)
         case 14: // x
-            calculationModel.setOperation(operation: .multiplication)
+            resultLabel.text = calculationModel.setOperation(operation: .multiplication)
         case 15: // /
-            calculationModel.setOperation(operation: .division)
+            resultLabel.text = calculationModel.setOperation(operation: .division)
         case 16: // %
-            print(16)
+            calculationModel.setPercentNumber()
+            resultLabel.text = calculationModel.getCurrentNumber()
         case 17: // +/-
-            print(17)
+            calculationModel.invertValue()
+            resultLabel.text = calculationModel.getCurrentNumber()
         case 18: // AC
             calculationModel.resetValues()
             resultLabel.text = "0"
