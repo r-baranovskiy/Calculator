@@ -39,7 +39,7 @@ class MainStackView: UIStackView {
         button.backgroundColor = color
         button.tintColor = .white
         button.titleLabel?.font = .boldSystemFont(ofSize: 22 )
-        button.layer.cornerRadius = 25
+        button.layer.cornerRadius = 30
         button.addTarget(self, action: #selector(keyboardButtonTapped), for: .touchUpInside)
         return button
     }
