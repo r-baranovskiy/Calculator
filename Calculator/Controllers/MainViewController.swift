@@ -11,10 +11,10 @@ class MainViewController: UIViewController {
     
     private var historyLabel: UILabel = {
         let label = UILabel()
-        label.text = ""
+        label.text = "History"
         label.font = .boldSystemFont(ofSize: 30)
         label.adjustsFontSizeToFitWidth = true
-        label.textColor = .gray
+        label.textColor = #colorLiteral(red: 0.5809274316, green: 0.4355365038, blue: 0.4317987561, alpha: 1)
         label.textAlignment = .right
         label.minimumScaleFactor = 0.3
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -26,7 +26,7 @@ class MainViewController: UIViewController {
         label.text = "0"
         label.font = .boldSystemFont(ofSize: 60)
         label.adjustsFontSizeToFitWidth = true
-        label.textColor = .white
+        label.textColor = #colorLiteral(red: 0.425906837, green: 0.3426610231, blue: 0.3406386971, alpha: 1)
         label.textAlignment = .right
         label.minimumScaleFactor = 0.3
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -50,6 +50,7 @@ class MainViewController: UIViewController {
         view.addSubview(mainStackView)
         view.addSubview(resultLabel)
         view.addSubview(historyLabel)
+        view.backgroundColor = #colorLiteral(red: 1, green: 0.9772391915, blue: 0.9339565635, alpha: 1)
     }
 }
 
@@ -98,8 +99,8 @@ extension MainViewController {
     private func setConstraints() {
         NSLayoutConstraint.activate([
             mainStackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -10),
-            mainStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
-            mainStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0),
+            mainStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
+            mainStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
             mainStackView.heightAnchor.constraint(equalTo: mainStackView.widthAnchor, multiplier: 1),
             
             historyLabel.bottomAnchor.constraint(equalTo: mainStackView.topAnchor, constant: -50),
